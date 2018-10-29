@@ -1,0 +1,35 @@
+*{
+border: 0px;
+margin: 0 px;
+padding: 0px:
+}
+body{
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  background: linear-gradient(to right,#A9A9A9, 	#2F4F4F);
+}
+header{
+  border-bottom: solid, grey, 1px;
+  text-align: center;
+  color: red;
+  width: 100%;
+}
+.MainContent{
+  width: 100%;
+  display: flex;
+  display: -webkit -flex;
+}
+.links{
+  color: white;
+  text-align: center;
+  flex: 1;
+  -webkit -flex: 1;
+  /*margin-left: 15%;*/
+  margin-top: 2%;
+  font-size: 1vw;
+  /*display: inline-block;
+  box-sizing: border-box;*/
+}
+.links img{
+  width: 200px;
+  border-radius: 25%;
+}

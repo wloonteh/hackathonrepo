@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geolocation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="medic.css">
+    <script type="text/javascript" src="tab.js"></script>
+    <script type="text/javascript" src="brazil.js"></script>
+    </head>
+
+  <body onload>
+    <header>
+      <div id="tab">
+      <img src="Hamburger.png" alt="tab">
+    </div>
+      <h1> Medical </h1>
+      <br>
+    </header>
+    <nav>
+    <a href="HomePage.html">Home </a> <br>
+    <a href="">Lost Belongings </a> <br>
+    <a href=""> Missing passport</a> <br>
+    <a href="emergency.html"> Assaulted </a> <br>
+    <a href=""> Injured </a> <br>
+    <a href="MoneyExchange.html"> Money exchange </a> <br>
+    <a href=""> Weather forecast </a> <br>
+  </nav>
+  <div class="MainContent">
+    <div class="title">
+      <h1>If we were in Brazil... </h1>
+    </div>
+    <div id="map"></div>
+  </div>
+    <article>
+      <p id="area"></p>
+      <p id="SMS"></p>
+	  <p id="danger_level"></p>
+	  <table style="width:80%">
+          <tr>
+            <th>Emergency Services</th>
+            <th>Phone Number</th> 
+          </tr>
+          <tr>
+            <td>Medical Emergency</td>
+            <td>192</td> 
+          </tr>
+          <tr>
+            <td>Fire Services</td>
+            <td>193</td> 
+          </tr>
+          <tr>
+            <td>Federal Police (Crimes Against State)</td>
+            <td>194</td> 
+          </tr>
+          <tr>
+            <td>Civil Police (Rio and Sao Paulo)</td>
+            <td>197</td> 
+          </tr>
+      </table>
+    </article>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUzSPpVEQW8hat1-w7thDB45HhFo7W-zg&libraries=places&callback=initMap" async defer></script>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geolocation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="medic.css">
+    <script type="text/javascript" src="tab.js"></script>
+    <script type="text/javascript" src="medic.js"></script>
+    </head>
+  <body>
+    <header>
+      <div id="tab">
+      <img src="Hamburger.png" alt="tab">
+    </div>
+      <h1> Police Alert</h1>
+      <br>
+    </header>
+    <nav>
+    <a href="HomePage.html">Home </a> <br>
+    <a href="lost_belongings.html">Lost Belongings </a> <br>
+    <a href=""> Missing passport</a> <br>
+    <a href="emergency.html"> Assaulted </a> <br>
+    <a href="medic-brazil.html"> Injured </a> <br>
+    <a href="MoneyExchange.html"> Money exchange </a> <br>
+    <a href="weather.html"> Weather forecast </a> <br>
+  </nav>
+  <div class="MainContent">
+    <div class="title">
+      <h1> Message sent </h1>
+    </div>
+    <div id="map"></div>
+  </div>
+    <article>
+      <p id="area"></p>
+      <p id="SMS"></p>
+    </article>
+    <script>
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+      var map, infoWindow;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 16
+        });
+        infoWindow = new google.maps.InfoWindow;
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var temp = ""+position.coords.latitude+","+position.coords.longitude
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+
+            var str = "I'm here!"
+            var result = str.link("https://www.google.com/maps/search/?api=1&query="+temp);
+            document.getElementById("SMS").innerHTML = "SMS Containing : (Please help, I need police assistance! "+result+") has been sent to the local police";
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed. Please make sure to give access when asked' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUzSPpVEQW8hat1-w7thDB45HhFo7W-zg&callback=initMap">
+    </script>
+  </body>
+</html>
